@@ -1,6 +1,7 @@
 import { tweetsData } from './data.js'
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
+
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
        handleLikeClick(e.target.dataset.like) 
@@ -47,7 +48,8 @@ function handleRetweetClick(tweetId){
 }
 
 function handleReplyClick(replyId){
-    document.getElementById(`replies-${replyId}`).classList.toggle('hidden')
+    document.getElementById(`replies-${replyId}`).classList.toggle('hidden');
+    
 }
 
 function handleTweetBtnClick(){
@@ -55,8 +57,8 @@ function handleTweetBtnClick(){
 
     if(tweetInput.value){
         tweetsData.unshift({
-            handle: `@Scrimba`,
-            profilePic: `images/scrimbalogo.png`,
+            handle: `@mary`,
+            profilePic: `images/prof.jpg`,
             likes: 0,
             retweets: 0,
             tweetText: tweetInput.value,
@@ -73,6 +75,7 @@ function handleTweetBtnClick(){
 
 function getFeedHtml(){
     let feedHtml = ``
+    
     
     tweetsData.forEach(function(tweet){
         
